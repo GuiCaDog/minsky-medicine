@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+  BrainBrowser: Web-based Neurological Visualization Tools
+  (https://brainbrowser.cbrain.mcgill.ca)
+
+  Copyright (C) 2011
+  The Royal Institution for the Advancement of Learning
+  McGill University
+
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as
+  published by the Free Software Foundation, either version 3 of the
+  License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU Affero General Public License for more details.
+
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+  Author: Tarek Sherif <tsherif@gmail.com> (http://tareksherif.ca/)
+  Author: Nicolas Kassis
+-->
+
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link type="text/css" href="css/ui-darkness/jquery-ui-1.8.10.custom.css" rel="Stylesheet" />
+    <link type="text/css" href="css/common.css" rel="Stylesheet" />
+    <link type="text/css" href="css/minsky-surface.css" rel="Stylesheet" />
+    <title>BrainBrowser Surface Viewer</title>
+  </head>
+  <body>
+    <div id="display">
+      <div id="vertex-data-wrapper">
+        <div id="vertex-data">
+          <h3>Select a point on the surface<BR>(shift-click)</h3>
+          <div>X: <span id="pick-x" class="pick-data"></span></div>
+          <div>Y: <span id="pick-y" class="pick-data"></span></div>
+          <div>Z: <span id="pick-z" class="pick-data"></span></div>
+          <input id="centric_rotation" type="checkbox"><label for="centric_rotation">Defined selected point as center of rotation<br /></label>
+          <div>Vertex number: <span id="pick-index" class="pick-data"></span></div>
+          <div id="pick-value-wrapper" style="display:none">
+            Value: <input id="pick-value" class="pick-data" size="5">
+            <span id="pick-color" class="pick-data"></span>
+            <div id="intensity-data-export" style="display:none">
+              <a id="intensity-data-export-link" target="_blank">Export new intensity values</a>
+            </div>
+          </div>
+          <div id="pick-label-wrapper" style="display:none">Region: <span id="pick-label" class="pick-data"></span></div>
+          <div id="annotation-wrapper" style="display:none">
+            <h4>
+              Add an annotation for this vertex!
+            </h4>
+            <div>
+              Image URL: <input type="text" id="annotation-image">
+            </div>
+            <div>
+              Link URL: <input type="text" id="annotation-url">
+            </div>
+            <div>
+              Text: <div><textarea id="annotation-text"></textarea></div>
+            </div>
+            <input type="submit" id="annotation-save" value="Save">
+          </div>
+          <div id="annotation-display" style="display:none">
+            <h3 id="annotation-header">Your Annotations</h3>
+            <div id="annotation-media"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Loading image from: http://www.ajaxload.info/ -->
+      <div id="loading" style="display: none"><img src="img/ajax-loader.gif" /></div>
+      <div id="brainbrowser">
+      <div id="examples" >
+          <a class="example" data-example-name="atlas"></a>
+      </div>
+      </div>
+    </div>
+
+    <!-- all the scripts -->
+    <script src="js/jquery-1.6.4.min.js"></script>
+    <script src="js/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/pako.js"></script>
+    <script src="js/brainbrowser/brainbrowser.js"></script>
+    <script src="js/brainbrowser/core/tree-store.js"></script>
+    <script src="js/brainbrowser/lib/config.js"></script>
+    <script src="js/brainbrowser/lib/utils.js"></script>
+    <script src="js/brainbrowser/lib/events.js"></script>
+    <script src="js/brainbrowser/lib/loader.js"></script>
+    <script src="js/brainbrowser/lib/color-map.js"></script>
+    <script src="js/brainbrowser/surface-viewer.js"></script>
+    <script src="js/brainbrowser/surface-viewer/lib/three.js"></script>
+    <script src="js/brainbrowser/surface-viewer/lib/parse-intensity-data.js"></script>
+    <script src="js/brainbrowser/surface-viewer/modules/annotations.js"></script>
+    <script src="js/brainbrowser/surface-viewer/modules/color.js"></script>
+    <script src="js/brainbrowser/surface-viewer/modules/loading.js"></script>
+    <script src="js/brainbrowser/surface-viewer/modules/rendering.js"></script>
+    <script src="js/brainbrowser/surface-viewer/modules/views.js"></script>
+    <script src="surface-viewer-demo.config.js"></script>
+    <script src="js/AnaglyphEffect.js"></script>
+    <script src="surface-viewer-demo.js"></script>
+  </body>
+</html>
