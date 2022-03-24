@@ -485,6 +485,14 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
       canvas.width = default_panel_width;
       canvas.height = default_panel_height;
       //if(axis_name == "yspace") { canvas.style.position = "bottom-right"}
+      if(axis_name == "yspace") { 
+        var canvas2 = document.createElement("canvas");
+        canvas2.width = default_panel_width;
+        canvas2.height = default_panel_height;
+        canvas2.id = "surface-display";
+        canvas2.style.backgroundColor = "#000000";
+        container.appendChild(canvas2);
+      }
       canvas.classList.add("slice-display");
       canvas.style.backgroundColor = "#000000";
       container.appendChild(canvas);
