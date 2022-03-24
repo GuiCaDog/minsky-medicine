@@ -484,14 +484,11 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
       var canvas = document.createElement("canvas");
       canvas.width = default_panel_width;
       canvas.height = default_panel_height;
-      //if(axis_name == "yspace") { canvas.style.position = "bottom-right"}
       if(axis_name == "yspace") { 
-        var canvas2 = document.createElement("canvas");
-        canvas2.width = default_panel_width;
-        canvas2.height = default_panel_height;
-        canvas2.id = "surface-display";
-        canvas2.style.backgroundColor = "#000000";
-        container.appendChild(canvas2);
+        var d = document.createElement("div");
+        d.innerHTML = '<p style="background-color:black;color:white;">Hola, soy un div y tengo un html, pero estoy en la posicion 3 de este container.</p>';
+        console.log(d.innerHTML);
+        container.appendChild(d);
       }
       canvas.classList.add("slice-display");
       canvas.style.backgroundColor = "#000000";
