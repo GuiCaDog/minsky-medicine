@@ -13,6 +13,7 @@ $(function () {
 			$("#volume-viewer").css("width", "100%");
 			$("#brainbrowser").css("width", "100%");
 			
+			
 			// Tamaño inicial por defecto (un medio de la altura de la ventana)
 			var height = window.innerHeight / 2.1;
 			viewer.setDefaultPanelSize(height, height);
@@ -29,8 +30,22 @@ $(function () {
 			}, false);
 
 			// Event listener para cuando ha cargado.
-			viewer.addEventListener("volumesloaded", function () {
+			viewer.addEventListener("volumesloaded", function (event) {
+				console.log(viewer);
+				var d = viewer.volumes[0].display;
+				console.log(d);
+				//viewer.volumes[0].header.order = ['yspace', 'xspace', 'zspace'];
+				//viewer.volumes[0].display.setBrightness(0.0);
+				//viewer.volumes[0].display.setPanel("xspace",d.getPanel("yspace"));
+				//viewer.volumes[0].display.setPanel('yspace',d.getPanel("zspace"));
+				//viewer.volumes[0].display.refreshPanels();
+				//console.log(viewer.volumes[0].header.order);
+				
+				//viewer.redrawVolumes();
+				console.log(event);
+				//console.log("volume2", volume.display.getPanel("xspace").setPanelSize(1024,1024));
 				console.log("Viewer is ready!");
+				//viewer.clearVolumes();
 				});
 
 			// Renderiza el viewer.

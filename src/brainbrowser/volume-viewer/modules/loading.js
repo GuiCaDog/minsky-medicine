@@ -120,6 +120,7 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
     }
     
     for (i = 0; i < num_descriptions; i++) {
+      console.log(num_descriptions);
       loadVolume(i);
     }
 
@@ -471,7 +472,7 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
           
     var display = VolumeViewer.createDisplay();
     var template_options = volume_description.template || {};
-    var views = volume_description.views || ["xspace", "yspace", "zspace"];
+    var views = volume_description.views || ["zspace", "xspace", "yspace"]; // ["xspace", "yspace", "zspace"];
     var template;
 
     display.propagateEventTo("*", volume);
@@ -479,9 +480,11 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
     container.classList.add("volume-container");
     
     views.forEach(function(axis_name) {
+      console.log(axis_name);
       var canvas = document.createElement("canvas");
       canvas.width = default_panel_width;
       canvas.height = default_panel_height;
+      //if(axis_name == "yspace") { canvas.style.position = "bottom-right"}
       canvas.classList.add("slice-display");
       canvas.style.backgroundColor = "#000000";
       container.appendChild(canvas);
