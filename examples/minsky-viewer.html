@@ -65,13 +65,21 @@
     </div>
   </script>
 
-  <!-- <div id="loading" style="display: none"><img src="img/ajax-loader.gif" /></div> -->
 
-  <div id="brainbrowser-wrapper" style="display:none">
+  <div id="brainbrowser-wrapper" > 
     <!-- Visor -->
-    <div id="volume-viewer">
-      <div id="brainbrowser"></div>
-      <div id="brainbrowser2"></div>
+      <div id="volume-viewer">
+        <div id="brainbrowser"></div>
+      </div>
+      
+    <div id="surface-viewer">
+      <!-- Loading image from: http://www.ajaxload.info/ -->
+      <div id="loading" style="display: none"><img src="img/ajax-loader.gif" /></div>
+      <div id="brainbrowser1">
+      <div id="examples" >
+          <a class="example" data-example-name="atlas"></a>
+      </div>
+      </div>
     </div>
   </div>
 
@@ -99,5 +107,16 @@
   <script src="js/brainbrowser/volume-viewer/volume-loaders/hdf5.js"></script>
   <script src="js/brainbrowser/volume-viewer/volume-loaders/netcdf.js"></script>
   <script src="minsky-viewer.config.js"></script>
-  <script src="minsky-viewer.js"></script>
+  <script src="minsky-viewer.js"></script> 
+  <script src="js/brainbrowser/surface-viewer.js"></script>
+  <script src="js/brainbrowser/surface-viewer/lib/three.js"></script>
+  <script src="js/brainbrowser/surface-viewer/lib/parse-intensity-data.js"></script>
+  <script src="js/brainbrowser/surface-viewer/modules/annotations.js"></script>
+  <script src="js/brainbrowser/surface-viewer/modules/color.js"></script>
+  <script src="js/brainbrowser/surface-viewer/modules/loading.js"></script>
+  <script src="js/brainbrowser/surface-viewer/modules/rendering.js"></script>
+  <script src="js/brainbrowser/surface-viewer/modules/views.js"></script>
+  <!-- <script src="minsky-surface.config.js"></script> -->
+  <script src="js/AnaglyphEffect.js"></script>
+  <script src="minsky-surface.js"></script>
 </body>

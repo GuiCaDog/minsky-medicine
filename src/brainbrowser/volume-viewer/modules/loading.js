@@ -485,7 +485,7 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
       canvas.width = default_panel_width;
       canvas.height = default_panel_height;
       if(axis_name == "yspace") { 
-        var d = document.createElement("div");
+        /*var d = document.createElement("div");
         var xhr = typeof XMLHttpRequest != 'undefined' ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
         xhr.open('get', 'minsky-surface.html', true);
         xhr.onreadystatechange = function() {
@@ -493,10 +493,9 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
               d.innerHTML = xhr.responseText;
           } 
         }
-        xhr.send();
-        //d.innerHTML = '<p style="background-color:black;color:white;">Hola, soy un div y tengo un html, pero estoy en la posicion 3 de este container.</p>';
-        //console.log(d.innerHTML);
-        container.appendChild(d);
+        xhr.send();*/
+        var surface = document.getElementById('surface-viewer');
+        container.appendChild(surface);
       }
       canvas.classList.add("slice-display");
       canvas.style.backgroundColor = "#000000";

@@ -36,46 +36,10 @@
   </head>
   <body>
     <div id="display">
-      <div id="vertex-data-wrapper">
-        <div id="vertex-data">
-          <h3>Select a point on the surface<BR>(shift-click)</h3>
-          <div>X: <span id="pick-x" class="pick-data"></span></div>
-          <div>Y: <span id="pick-y" class="pick-data"></span></div>
-          <div>Z: <span id="pick-z" class="pick-data"></span></div>
-          <input id="centric_rotation" type="checkbox"><label for="centric_rotation">Defined selected point as center of rotation<br /></label>
-          <div>Vertex number: <span id="pick-index" class="pick-data"></span></div>
-          <div id="pick-value-wrapper" style="display:none">
-            Value: <input id="pick-value" class="pick-data" size="5">
-            <span id="pick-color" class="pick-data"></span>
-            <div id="intensity-data-export" style="display:none">
-              <a id="intensity-data-export-link" target="_blank">Export new intensity values</a>
-            </div>
-          </div>
-          <div id="pick-label-wrapper" style="display:none">Region: <span id="pick-label" class="pick-data"></span></div>
-          <div id="annotation-wrapper" style="display:none">
-            <h4>
-              Add an annotation for this vertex!
-            </h4>
-            <div>
-              Image URL: <input type="text" id="annotation-image">
-            </div>
-            <div>
-              Link URL: <input type="text" id="annotation-url">
-            </div>
-            <div>
-              Text: <div><textarea id="annotation-text"></textarea></div>
-            </div>
-            <input type="submit" id="annotation-save" value="Save">
-          </div>
-          <div id="annotation-display" style="display:none">
-            <h3 id="annotation-header">Your Annotations</h3>
-            <div id="annotation-media"></div>
-          </div>
-        </div>
-      </div>
+
       <!-- Loading image from: http://www.ajaxload.info/ -->
       <div id="loading" style="display: none"><img src="img/ajax-loader.gif" /></div>
-      <div id="brainbrowser">
+      <div id="brainbrowser1">
       <div id="examples" >
           <a class="example" data-example-name="atlas"></a>
       </div>
@@ -102,8 +66,8 @@
     <script src="js/brainbrowser/surface-viewer/modules/loading.js"></script>
     <script src="js/brainbrowser/surface-viewer/modules/rendering.js"></script>
     <script src="js/brainbrowser/surface-viewer/modules/views.js"></script>
-    <script src="surface-viewer-demo.config.js"></script>
+    <script src="minsky-surface.config.js"></script>
     <script src="js/AnaglyphEffect.js"></script>
-    <script src="surface-viewer-demo.js"></script>
+    <script src="minsky-surface.js"></script>
   </body>
 </html>

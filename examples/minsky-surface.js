@@ -31,7 +31,7 @@
 $(function() {
   "use strict";
 
-  /*var THREE = BrainBrowser.SurfaceViewer.THREE;
+  var THREE = BrainBrowser.SurfaceViewer.THREE;
   var atlas_labels = {};
 
   // Request variables used to cancel the current request
@@ -61,12 +61,12 @@ $(function() {
         atlas_labels[match[2]] = match[1];
       }
     });
-  });*/
+  });
 
   /////////////////////////////////////
   // Start running the Surface Viewer
   /////////////////////////////////////
-	BrainBrowser.SurfaceViewer.start("brainbrowser", function(viewer) {
+	BrainBrowser.SurfaceViewer.start("brainbrowser1", function(viewer) {
 
     //Add an event listener.
     viewer.addEventListener("displaymodel", function() {
@@ -77,7 +77,17 @@ $(function() {
     viewer.render();
 
     // Load a model into the scene.
-    viewer.loadModelFromURL("/models/brain_surface.obj");
+    //viewer.loadModelFromURL("/models/brain_surface.obj");
+    viewer.annotations.setMarkerRadius(1);
+    viewer.loadModelFromURL("models/brain-surface.obj", {
+      format: "mniobj",
+      complete: function() {
+        $("#vertex-data-wrapper").show();
+        $("#pick-value-wrapper").show();
+        $("#pick-label-wrapper").show();
+      },
+      parse: { split: true }
+    });
 
     // Hook viewer behaviour into UI.
     $("#wireframe").change(function(e) {

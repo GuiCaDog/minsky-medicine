@@ -1,5 +1,6 @@
 (function() {
     "use strict";
+      BrainBrowser.config.set("worker_dir", "js/brainbrowser/workers/");
     
     // Custom configuration for the Volume Viewer demo app.
     BrainBrowser.config.set("color_maps", [
