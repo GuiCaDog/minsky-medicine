@@ -414,6 +414,7 @@
       * ```
       */
       draw: function(cursor_color, active) {
+        active = false
         var cursor = panel.getCursorPosition();
 
         if (old_cursor_position.x !== cursor.x || old_cursor_position.y !== cursor.y) {
@@ -464,7 +465,7 @@
           context: context
         });
         
-        drawCursor(panel, cursor_color);
+        //drawCursor(panel, cursor_color);
 
         if (active) {
           context.save();

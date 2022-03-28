@@ -10,63 +10,20 @@
 </head>
 <body>
 
+  
   <script id="volume-ui-template" type="x-volume-ui-template">
     <div class="volume-viewer-display">
+
     </div>
   </script>
   <script id="overlay-ui-template" type="x-volume-ui-template">
     <div class="overlay-viewer-display">
     </div>
-    <div class="volume-viewer-controls volume-controls">
-
-      <div class="coords">
-        <div class="control-heading" id="voxel-coordinates-heading-{{VOLID}}">
-          Voxel Coordinates:
-        </div>
-        <div class="voxel-coords" data-volume-id="{{VOLID}}">
-          I:<input id="voxel-i-{{VOLID}}" class="control-inputs">
-          J:<input id="voxel-j-{{VOLID}}" class="control-inputs">
-          K:<input id="voxel-k-{{VOLID}}" class="control-inputs">
-        </div>
-        <div class="control-heading" id="world-coordinates-heading-{{VOLID}}">
-          World Coordinates:
-        </div>
-        <div class="world-coords" data-volume-id="{{VOLID}}">
-          X:<input id="world-x-{{VOLID}}" class="control-inputs">
-          Y:<input id="world-y-{{VOLID}}" class="control-inputs">
-          Z:<input id="world-z-{{VOLID}}" class="control-inputs">
-        </div>
-      </div>
-
-      <div id="intensity-value-div-{{VOLID}}">
-        <span class="control-heading" data-volume-id="{{VOLID}}">
-          Value:
-        </span>
-        <span id="intensity-value-{{VOLID}}" class="intensity-value"></span>
-      </div>
-
-      <div class="blend-div" data-volume-id="{{VOLID}}">
-        <span class="control-heading" id="blend-heading{{VOLID}}">Blend (0.0 to 1.0):</span>
-        <input class="control-inputs" value="0.5" id="blend-val"/>
-        <div id="blend-slider" class="slider volume-viewer-blend"></div>
-      </div>
-
-      <div class="contrast-div" data-volume-id="{{VOLID}}">
-        <span class="control-heading" id="contrast-heading{{VOLID}}">Contrast (0.0 to 2.0):</span>
-        <input class="control-inputs" value="1.0" id="contrast-val"/>
-        <div id="contrast-slider" class="slider volume-viewer-contrast"></div>
-      </div>
-
-      <div class="brightness-div" data-volume-id="{{VOLID}}">
-        <span class="control-heading" id="brightness-heading{{VOLID}}">Brightness (-1 to 1):</span>
-        <input class="control-inputs" value="0" id="brightness-val"/>
-        <div id="brightness-slider" class="slider volume-viewer-brightness"></div>
-      </div>
-    </div>
+    
   </script>
 
-
   <div id="brainbrowser-wrapper" > 
+
     <!-- Visor -->
     <div id="volume-viewer">
       <div id="brainbrowser"></div>
@@ -86,6 +43,7 @@
   <script>
     var W = '';
     var H = '';
+
     window.addEventListener('load', () => {
 
       var height = window.innerHeight / 2.1;
@@ -93,6 +51,7 @@
       document.getElementById("brainbrowser1").style.width = height + 'px';
       document.getElementById("brainbrowser1").style.height = height + 'px';
     })
+
     window.addEventListener('resize', function(event){
 
       W = document.getElementsByClassName('slice-display')[0].clientWidth;
@@ -102,9 +61,8 @@
       document.getElementById("brainbrowser1").style.height = H + 'px';
 
     })
-      
-    
   </script>
+  
   <script src="js/jquery-1.6.4.min.js"></script>
   <script src="js/jquery-ui-1.8.10.custom.min.js"></script>
   <script src="js/ui.js"></script>

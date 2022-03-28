@@ -16,12 +16,13 @@ $(function () {
 			
 			// Tamaño inicial por defecto (un medio de la altura de la ventana)
 			var height = window.innerHeight / 2.1;
+			
 			viewer.setDefaultPanelSize(height, height);
 
 			// Load the default color map.
 			// (Second argument is the cursor color to use).
-			var color_map_config = BrainBrowser.config.get("color_maps")[0];
-			viewer.loadDefaultColorMapFromURL(color_map_config.url, "#FF0000");
+			var color_map_config = BrainBrowser.config.get("color_maps")[2];
+			viewer.loadDefaultColorMapFromURL(color_map_config.url, "#FFFFFF");
 			
 			// Event listener para resize de la ventana.
 			window.addEventListener('resize', () => {
@@ -38,6 +39,9 @@ $(function () {
 			// Renderiza el viewer.
 			viewer.render();
 			
+			// get url parameter called model
+			//var model = getUrlParameter('model');
+
 			// Carga las imagenes
 			viewer.loadVolumes({
 				volumes: [
@@ -51,6 +55,8 @@ $(function () {
 				},
 				},
 			],
+
+			//Mirar como integrar overlay --- OVERLAY AQUI -----
 			overlay: {
 				template: {
 				element_id: "overlay-ui-template",
