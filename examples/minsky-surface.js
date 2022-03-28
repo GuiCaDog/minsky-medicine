@@ -67,7 +67,8 @@ $(function() {
   // Start running the Surface Viewer
   /////////////////////////////////////
 	BrainBrowser.SurfaceViewer.start("brainbrowser1", function(viewer) {
-
+   
+  
     //Add an event listener.
     viewer.addEventListener("displaymodel", function() {
       console.log("We have a model!");
@@ -93,6 +94,11 @@ $(function() {
     $("#wireframe").change(function(e) {
       viewer.setWireframe($(this).is(":checked"));
     });
+
+    $(window).resize(function() {
+      viewer.updateViewport();
+    });
+    
 
   }); 
 

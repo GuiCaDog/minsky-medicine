@@ -68,21 +68,43 @@
 
   <div id="brainbrowser-wrapper" > 
     <!-- Visor -->
-      <div id="volume-viewer">
-        <div id="brainbrowser"></div>
-      </div>
+    <div id="volume-viewer">
+      <div id="brainbrowser"></div>
+    </div>
       
     <div id="surface-viewer">
       <!-- Loading image from: http://www.ajaxload.info/ -->
-      <div id="loading" style="display: none"><img src="img/ajax-loader.gif" /></div>
+      <!-- <div id="loading" style="display: none"><img src="img/ajax-loader.gif" /></div> -->
       <div id="brainbrowser1">
-      <div id="examples" >
+      <!-- <div id="examples" >
           <a class="example" data-example-name="atlas"></a>
-      </div>
+      </div> -->
       </div>
     </div>
   </div>
 
+  <script>
+    var W = '';
+    var H = '';
+    window.addEventListener('load', () => {
+
+      var height = window.innerHeight / 2.1;
+
+      document.getElementById("brainbrowser1").style.width = height + 'px';
+      document.getElementById("brainbrowser1").style.height = height + 'px';
+    })
+    window.addEventListener('resize', function(event){
+
+      W = document.getElementsByClassName('slice-display')[0].clientWidth;
+      H = document.getElementsByClassName('slice-display')[0].clientHeight;
+
+      document.getElementById("brainbrowser1").style.width = W + 'px';
+      document.getElementById("brainbrowser1").style.height = H + 'px';
+
+    })
+      
+    
+  </script>
   <script src="js/jquery-1.6.4.min.js"></script>
   <script src="js/jquery-ui-1.8.10.custom.min.js"></script>
   <script src="js/ui.js"></script>
