@@ -46,9 +46,24 @@ $(function () {
 			viewer.loadVolumes({
 				volumes: [
 				{
-				type: "minc",
-				header_url: "models/structural1.mnc.header",
-				raw_data_url: "models/structural1.mnc.raw",
+				//type: "minc",
+				type: "nifti1",
+				//header_url: "models/structural1.mnc.header",
+				//raw_data_url: "models/structural1.mnc.raw",
+				nii_url: "jose/n_mmni_fcolin27_t1_tal_hires.nii",
+				//nii_url: "jose/n_mmni_fcolin27_t1_tal_hires.nii",
+				template: {
+					element_id: "volume-ui-template",
+					viewer_insert_class: "volume-viewer-display",
+				},
+				},
+				{
+				//type: "minc",
+				type: "nifti1",
+				//header_url: "models/structural1.mnc.header",
+				//raw_data_url: "models/structural1.mnc.raw",
+				//nii_url: "jose/n_mmni_fcolin27_t1_tal_hires.nii",
+				nii_url: "jose/n_mmni_fcolin27_t1_tal_hires_seg.nii",
 				template: {
 					element_id: "volume-ui-template",
 					viewer_insert_class: "volume-viewer-display",
@@ -59,8 +74,8 @@ $(function () {
 			//Mirar como integrar overlay --- OVERLAY AQUI -----
 			overlay: {
 				template: {
-				element_id: "overlay-ui-template",
-				viewer_insert_class: "overlay-viewer-display",
+				element_id: "volume-ui-template",
+				viewer_insert_class: "volume-viewer-display",
 				},
 			},
 			complete: function () {
@@ -68,7 +83,7 @@ $(function () {
 				$("#brainbrowser-wrapper").slideDown({ duration: 600 });
 			},
 			});
-
+			
 		}
 	); 
 

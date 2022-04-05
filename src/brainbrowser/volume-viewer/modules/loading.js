@@ -96,23 +96,30 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
     var i;
         
     function loadVolume(i) {
+      //if(i==1) return;
       setVolume(i, volume_descriptions[i], function() {
         if (++num_loaded < num_descriptions) {
+          console.log("yeyeye");
           return;
         }
 
+        if(options.overlay) { console.log(options.overlay);}
+        console.log(num_descriptions);
+
         if (options.overlay && num_descriptions > 1) {
+        //OVERLAY   
           viewer.createOverlay(overlay_options, function() {
             if (BrainBrowser.utils.isFunction(complete)) {
               complete();
             }
-
+            console.log("ye");
             viewer.triggerEvent("volumesloaded");
           });
         } else {
           if (BrainBrowser.utils.isFunction(complete)) {
             complete();
           }
+            console.log("yeye");
 
           viewer.triggerEvent("volumesloaded");
         }
@@ -496,6 +503,7 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
         xhr.send();*/
         var surface = document.getElementById('surface-viewer');
         container.appendChild(surface);
+        //BRAIN
       }
       canvas.classList.add("slice-display");
       canvas.style.backgroundColor = "#000000";
