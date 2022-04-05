@@ -99,12 +99,8 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
       //if(i==1) return;
       setVolume(i, volume_descriptions[i], function() {
         if (++num_loaded < num_descriptions) {
-          console.log("yeyeye");
           return;
         }
-
-        if(options.overlay) { console.log(options.overlay);}
-        console.log(num_descriptions);
 
         if (options.overlay && num_descriptions > 1) {
         //OVERLAY   
@@ -112,14 +108,12 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
             if (BrainBrowser.utils.isFunction(complete)) {
               complete();
             }
-            console.log("ye");
             viewer.triggerEvent("volumesloaded");
           });
         } else {
           if (BrainBrowser.utils.isFunction(complete)) {
             complete();
           }
-            console.log("yeye");
 
           viewer.triggerEvent("volumesloaded");
         }
@@ -475,6 +469,9 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
   // Create canvases and add mouse interface.
   function createVolumeDisplay(dom_element, vol_id, volume_description) {
     var container = document.createElement("div");
+    console.log("hey soc jo", vol_id);
+    if(vol_id == 1 || vol_id == 0)
+      container.id = "container-remove"+vol_id;
     var volume = viewer.volumes[vol_id];
           
     var display = VolumeViewer.createDisplay();
@@ -492,15 +489,6 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
       canvas.width = default_panel_width;
       canvas.height = default_panel_height;
       if(axis_name == "yspace") { 
-        /*var d = document.createElement("div");
-        var xhr = typeof XMLHttpRequest != 'undefined' ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-        xhr.open('get', 'minsky-surface.html', true);
-        xhr.onreadystatechange = function() {
-          if (xhr.readyState == 4 && xhr.status == 200) { 
-              d.innerHTML = xhr.responseText;
-          } 
-        }
-        xhr.send();*/
         var surface = document.getElementById('surface-viewer');
         container.appendChild(surface);
         //BRAIN

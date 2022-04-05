@@ -34,6 +34,8 @@ $(function () {
 			viewer.addEventListener("volumesloaded", function (event) {
 				//var d = viewer.volumes[0].display;
 				console.log("Viewer is ready!");
+				$('#container-remove0').remove();
+				$('#container-remove1').remove();
 				});
 
 			// Renderiza el viewer.
@@ -85,6 +87,8 @@ $(function () {
 			});
 			
 		}
-	); 
+	);
+	
+ 
 
 });
