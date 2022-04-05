@@ -96,7 +96,6 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
     var i;
         
     function loadVolume(i) {
-      //if(i==1) return;
       setVolume(i, volume_descriptions[i], function() {
         if (++num_loaded < num_descriptions) {
           return;
@@ -469,7 +468,6 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
   // Create canvases and add mouse interface.
   function createVolumeDisplay(dom_element, vol_id, volume_description) {
     var container = document.createElement("div");
-    console.log("hey soc jo", vol_id);
     if(vol_id == 1 || vol_id == 0)
       container.id = "container-remove"+vol_id;
     var volume = viewer.volumes[vol_id];

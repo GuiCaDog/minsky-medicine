@@ -23,7 +23,7 @@ $(function () {
 			// (Second argument is the cursor color to use).
 			var color_map_config = BrainBrowser.config.get("color_maps")[2];
 			viewer.loadDefaultColorMapFromURL(color_map_config.url, "#FFFFFF");
-			
+			//viewer.loadVolumeColorMap
 			// Event listener para resize de la ventana.
 			window.addEventListener('resize', () => {
 				height = window.innerHeight / 2.1;
@@ -32,7 +32,15 @@ $(function () {
 
 			// Event listener para cuando ha cargado.
 			viewer.addEventListener("volumesloaded", function (event) {
-				//var d = viewer.volumes[0].display;
+				var d = viewer.volumes[0].display;
+				var color_map = BrainBrowser.config.get("color_maps")[0];
+        		viewer.loadVolumeColorMapFromURL(1, color_map.url, "#FF0000", function() {
+        		  viewer.redrawVolumes();
+        		});
+				var value = 0.35;
+          		viewer.volumes[2].blend_ratios[0] = 1 - value;
+          		viewer.volumes[2].blend_ratios[1] = value;
+          		viewer.redrawVolumes();
 				console.log("Viewer is ready!");
 				$('#container-remove0').remove();
 				$('#container-remove1').remove();
