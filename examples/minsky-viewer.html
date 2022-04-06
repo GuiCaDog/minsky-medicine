@@ -19,31 +19,38 @@
   <script id="overlay-ui-template" type="x-volume-ui-template">
     <div class="overlay-viewer-display">
     </div>
-    
   </script>
 
   <div id="brainbrowser-wrapper" > 
 
-    <!-- Visor -->
+    <!-- Visor Volumen-->
     <div id="volume-viewer">
       <div id="brainbrowser"></div>
     </div>
-      
+
+    <!-- Visor Volumen-->
     <div id="surface-viewer">
-      <!-- Loading image from: http://www.ajaxload.info/ -->
-      <!-- <div id="loading" style="display: none"><img src="img/ajax-loader.gif" /></div> -->
-      <div id="brainbrowser1">
-      <!-- <div id="examples" >
-          <a class="example" data-example-name="atlas"></a>
-      </div> -->
-      </div>
+      <div id="brainbrowser1"></div>
     </div>
+
   </div>
 
+
   <script>
+
+    // Este trozo de código tiene como finalidad dar al visor de superficie
+    // un tamaño adecuado para la pantalla en la que se visualiza, asi como
+    // recalcular el tamaño del visor cuando se redimensione la pantalla. 
+    // Este código es necesario pues el visor de superficie no tiene una
+    // funcion de redimensionado en la API de BrainBrowser. Así como el visor
+    // de volumen tiene viewer.setDefaultPanelSize() y viewer.setPanelSize().
+
     var W = '';
     var H = '';
 
+    // Esta función se ejecuta cuando todo se ha cargado.
+    // Una vez ha cargado todo (que es cuando podremos referenciar el visor de superficie)
+    // hacemos que su tamaño sea igual a un medio de la altura de la ventana del navegador.
     window.addEventListener('load', () => {
 
       var height = window.innerHeight / 2.1;
@@ -52,6 +59,9 @@
       document.getElementById("brainbrowser1").style.height = height + 'px';
     })
 
+    // De igual manera, cuando se redimensiona la ventana del navegador,
+    // recalculamos el tamaño del visor de superficie. Esta vez haciendo
+    // que su altura y anchura sea igual al tamaño de los paneles del visor de volumen.
     window.addEventListener('resize', function(event){
 
       W = document.getElementsByClassName('slice-display')[0].clientWidth;
