@@ -120,7 +120,6 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
     }
     
     for (i = 0; i < num_descriptions; i++) {
-      console.log(num_descriptions);
       loadVolume(i);
     }
 
@@ -482,7 +481,6 @@ BrainBrowser.VolumeViewer.modules.loading = function(viewer) {
     container.classList.add("volume-container");
     
     views.forEach(function(axis_name) {
-      console.log(axis_name);
       var canvas = document.createElement("canvas");
       canvas.width = default_panel_width;
       canvas.height = default_panel_height;
